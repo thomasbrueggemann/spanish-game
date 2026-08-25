@@ -1,0 +1,752 @@
+[
+  [
+    { "frase": "Sin embargo", "tipo": "contraste" },
+    { "frase": "Incluso", "tipo": "adición" },
+    { "frase": "Diría que", "tipo": "opinión" }
+  ],
+  [
+    { "frase": "No obstante", "tipo": "contraste" },
+    { "frase": "Aparte de eso", "tipo": "adición" },
+    { "frase": "O sea", "tipo": "reformulación" }
+  ],
+  [
+    { "frase": "En cambio", "tipo": "contraste" },
+    { "frase": "Junto a esto", "tipo": "adición" },
+    { "frase": "Es decir", "tipo": "reformulación" }
+  ],
+  [
+    { "frase": "Por el contrario", "tipo": "contraste" },
+    { "frase": "No solo eso, sino que", "tipo": "adición" },
+    { "frase": "Dicho de otro modo", "tipo": "reformulación" }
+  ],
+  [
+    { "frase": "Aun así", "tipo": "contraste" },
+    { "frase": "Del mismo modo", "tipo": "adición" },
+    { "frase": "En otras palabras", "tipo": "reformulación" }
+  ],
+  [
+    { "frase": "Ahora bien", "tipo": "contraste" },
+    { "frase": "A esto se añade", "tipo": "adición" },
+    { "frase": "Mejor dicho", "tipo": "reformulación" }
+  ],
+  [
+    { "frase": "Pese a ello", "tipo": "contraste" },
+    { "frase": "Por añadidura", "tipo": "adición" },
+    { "frase": "Quiero decir", "tipo": "reformulación" }
+  ],
+  [
+    { "frase": "Mientras que", "tipo": "contraste" },
+    { "frase": "Por ejemplo", "tipo": "ejemplo" },
+    { "frase": "Para ser claro", "tipo": "reformulación" }
+  ],
+  [
+    { "frase": "Por un lado", "tipo": "contraste" },
+    { "frase": "Como muestra", "tipo": "ejemplo" },
+    { "frase": "Lo que quiero decir es", "tipo": "reformulación" }
+  ],
+  [
+    { "frase": "Por otro lado", "tipo": "contraste" },
+    { "frase": "Es el caso de", "tipo": "ejemplo" },
+    { "frase": "Si", "tipo": "condición" }
+  ],
+  [
+    { "frase": "En lugar de", "tipo": "contraste" },
+    { "frase": "Tal como", "tipo": "ejemplo" },
+    { "frase": "En caso de que", "tipo": "condición" }
+  ],
+  [
+    { "frase": "Al contrario de lo que parece", "tipo": "contraste" },
+    { "frase": "Pongamos por caso", "tipo": "ejemplo" },
+    { "frase": "Siempre que", "tipo": "condición" }
+  ],
+  [
+    { "frase": "Por lo tanto", "tipo": "consecuencia" },
+    { "frase": "Basta pensar en", "tipo": "ejemplo" },
+    { "frase": "A menos que", "tipo": "condición" }
+  ],
+  [
+    { "frase": "En consecuencia", "tipo": "consecuencia" },
+    { "frase": "Concretamente", "tipo": "ejemplo" },
+    { "frase": "Con tal de que", "tipo": "condición" }
+  ],
+  [
+    { "frase": "Por consiguiente", "tipo": "consecuencia" },
+    { "frase": "En particular", "tipo": "ejemplo" },
+    { "frase": "Salvo que", "tipo": "condición" }
+  ],
+  [
+    { "frase": "Así pues", "tipo": "consecuencia" },
+    { "frase": "Sobre todo", "tipo": "ejemplo" },
+    { "frase": "Suponiendo que", "tipo": "condición" }
+  ],
+  [
+    { "frase": "De ahí que", "tipo": "consecuencia" },
+    { "frase": "Especialmente", "tipo": "ejemplo" },
+    { "frase": "De lo contrario", "tipo": "condición" }
+  ],
+  [
+    { "frase": "De modo que", "tipo": "consecuencia" },
+    { "frase": "Un caso claro es", "tipo": "ejemplo" },
+    { "frase": "De hecho", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Como resultado", "tipo": "consecuencia" },
+    { "frase": "Véase", "tipo": "ejemplo" },
+    { "frase": "En realidad", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Esto lleva a", "tipo": "consecuencia" },
+    { "frase": "Aunque", "tipo": "concesión" },
+    { "frase": "Sin duda", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Por eso mismo", "tipo": "consecuencia" },
+    { "frase": "Si bien", "tipo": "concesión" },
+    { "frase": "Cabe destacar que", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Lo que implica que", "tipo": "consecuencia" },
+    { "frase": "A pesar de", "tipo": "concesión" },
+    { "frase": "Lo importante es que", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Entonces", "tipo": "consecuencia" },
+    { "frase": "Es cierto que", "tipo": "concesión" },
+    { "frase": "Hay que subrayar que", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "A raíz de esto", "tipo": "consecuencia" },
+    { "frase": "Admito que", "tipo": "concesión" },
+    { "frase": "Ni mucho menos", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Porque", "tipo": "causa" },
+    { "frase": "Reconozco que", "tipo": "concesión" },
+    { "frase": "Bajo ningún concepto", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Ya que", "tipo": "causa" },
+    { "frase": "Por más que", "tipo": "concesión" },
+    { "frase": "Vale la pena recordar", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Puesto que", "tipo": "causa" },
+    { "frase": "Aun cuando", "tipo": "concesión" },
+    { "frase": "Nada menos que", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Debido a", "tipo": "causa" },
+    { "frase": "De acuerdo, pero", "tipo": "concesión" },
+    { "frase": "Precisamente", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "Dado que", "tipo": "causa" },
+    { "frase": "Puede ser, aunque", "tipo": "concesión" },
+    { "frase": "Justamente", "tipo": "énfasis" }
+  ],
+  [
+    { "frase": "A causa de", "tipo": "causa" },
+    { "frase": "Hasta cierto punto", "tipo": "concesión" },
+    { "frase": "Hoy en día", "tipo": "tiempo" }
+  ],
+  [
+    { "frase": "Gracias a", "tipo": "causa" },
+    { "frase": "En parte tienes razón", "tipo": "concesión" },
+    { "frase": "Hasta ahora", "tipo": "tiempo" }
+  ],
+  [
+    { "frase": "Por culpa de", "tipo": "causa" },
+    { "frase": "En resumen", "tipo": "conclusión" },
+    { "frase": "A largo plazo", "tipo": "tiempo" }
+  ],
+  [
+    { "frase": "El motivo es que", "tipo": "causa" },
+    { "frase": "En conclusión", "tipo": "conclusión" },
+    { "frase": "A corto plazo", "tipo": "tiempo" }
+  ],
+  [
+    { "frase": "Esto se explica por", "tipo": "causa" },
+    { "frase": "Para terminar", "tipo": "conclusión" },
+    { "frase": "Cada vez más", "tipo": "tiempo" }
+  ],
+  [
+    { "frase": "Visto que", "tipo": "causa" },
+    { "frase": "En definitiva", "tipo": "conclusión" },
+    { "frase": "Desde hace años", "tipo": "tiempo" }
+  ],
+  [
+    { "frase": "Como", "tipo": "causa" },
+    { "frase": "Total, que", "tipo": "conclusión" },
+    { "frase": "En el futuro", "tipo": "tiempo" }
+  ],
+  [
+    { "frase": "En primer lugar", "tipo": "secuencia" },
+    { "frase": "Resumiendo", "tipo": "conclusión" },
+    { "frase": "Tarde o temprano", "tipo": "tiempo" }
+  ],
+  [
+    { "frase": "En segundo lugar", "tipo": "secuencia" },
+    { "frase": "A fin de cuentas", "tipo": "conclusión" },
+    { "frase": "Con respecto a", "tipo": "referencia" }
+  ],
+  [
+    { "frase": "A continuación", "tipo": "secuencia" },
+    { "frase": "En pocas palabras", "tipo": "conclusión" },
+    { "frase": "En cuanto a", "tipo": "referencia" }
+  ],
+  [
+    { "frase": "Luego", "tipo": "secuencia" },
+    { "frase": "Todo apunta a que", "tipo": "conclusión" },
+    { "frase": "Por lo que se refiere a", "tipo": "referencia" }
+  ],
+  [
+    { "frase": "Después", "tipo": "secuencia" },
+    { "frase": "Por todo ello", "tipo": "conclusión" },
+    { "frase": "Hablando de", "tipo": "referencia" }
+  ],
+  [
+    { "frase": "Antes de nada", "tipo": "secuencia" },
+    { "frase": "Lo esencial es", "tipo": "conclusión" },
+    { "frase": "Según los datos", "tipo": "referencia" }
+  ],
+  [
+    { "frase": "Para empezar", "tipo": "secuencia" },
+    { "frase": "Concluyo que", "tipo": "conclusión" },
+    { "frase": "Como dice el refrán", "tipo": "referencia" }
+  ],
+  [
+    { "frase": "Finalmente", "tipo": "secuencia" },
+    { "frase": "A mi juicio", "tipo": "opinión" },
+    { "frase": "Volviendo al tema", "tipo": "referencia" }
+  ],
+  [
+    { "frase": "Por último", "tipo": "secuencia" },
+    { "frase": "Desde mi punto de vista", "tipo": "opinión" },
+    { "frase": "A propósito de", "tipo": "referencia" }
+  ],
+  [
+    { "frase": "Al final", "tipo": "secuencia" },
+    { "frase": "Estoy convencido de que", "tipo": "opinión" },
+    { "frase": "¿No te parece que", "tipo": "interpelación" }
+  ],
+  [
+    { "frase": "Mientras tanto", "tipo": "secuencia" },
+    { "frase": "Me parece que", "tipo": "opinión" },
+    { "frase": "Piénsalo así", "tipo": "interpelación" }
+  ],
+  [
+    { "frase": "Acto seguido", "tipo": "secuencia" },
+    { "frase": "Creo firmemente que", "tipo": "opinión" },
+    { "frase": "Imagina que", "tipo": "interpelación" }
+  ],
+  [
+    { "frase": "Además", "tipo": "adición" },
+    { "frase": "En mi opinión", "tipo": "opinión" },
+    { "frase": "Dime una cosa", "tipo": "interpelación" }
+  ],
+  [
+    { "frase": "Asimismo", "tipo": "adición" },
+    { "frase": "Sostengo que", "tipo": "opinión" },
+    { "frase": "Te lo pregunto al revés", "tipo": "interpelación" }
+  ],
+  [
+    { "frase": "También", "tipo": "adición" },
+    { "frase": "Defiendo que", "tipo": "opinión" },
+    { "frase": "Ponte en su lugar", "tipo": "interpelación" }
+  ],
+  [
+    { "frase": "Igualmente", "tipo": "adición" },
+    { "frase": "No me cabe duda de que", "tipo": "opinión" },
+    { "frase": "Seamos honestos", "tipo": "interpelación" }
+  ],
+  [
+    { "frase": "Es más", "tipo": "adición" },
+    { "frase": "Personalmente", "tipo": "opinión" },
+    { "frase": "Coincidirás conmigo en que", "tipo": "interpelación" }
+  ],
+  [
+    { "frase": "Incluso", "tipo": "adición" },
+    { "frase": "A mi modo de ver", "tipo": "opinión" },
+    { "frase": "Sin embargo", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Aparte de eso", "tipo": "adición" },
+    { "frase": "Diría que", "tipo": "opinión" },
+    { "frase": "No obstante", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Junto a esto", "tipo": "adición" },
+    { "frase": "O sea", "tipo": "reformulación" },
+    { "frase": "En cambio", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "No solo eso, sino que", "tipo": "adición" },
+    { "frase": "Es decir", "tipo": "reformulación" },
+    { "frase": "Por el contrario", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Del mismo modo", "tipo": "adición" },
+    { "frase": "Dicho de otro modo", "tipo": "reformulación" },
+    { "frase": "Aun así", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "A esto se añade", "tipo": "adición" },
+    { "frase": "En otras palabras", "tipo": "reformulación" },
+    { "frase": "Ahora bien", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Por añadidura", "tipo": "adición" },
+    { "frase": "Mejor dicho", "tipo": "reformulación" },
+    { "frase": "Pese a ello", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Por ejemplo", "tipo": "ejemplo" },
+    { "frase": "Quiero decir", "tipo": "reformulación" },
+    { "frase": "Mientras que", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Como muestra", "tipo": "ejemplo" },
+    { "frase": "Para ser claro", "tipo": "reformulación" },
+    { "frase": "Por un lado", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Es el caso de", "tipo": "ejemplo" },
+    { "frase": "Lo que quiero decir es", "tipo": "reformulación" },
+    { "frase": "Por otro lado", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Tal como", "tipo": "ejemplo" },
+    { "frase": "Si", "tipo": "condición" },
+    { "frase": "En lugar de", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Pongamos por caso", "tipo": "ejemplo" },
+    { "frase": "En caso de que", "tipo": "condición" },
+    { "frase": "Al contrario de lo que parece", "tipo": "contraste" }
+  ],
+  [
+    { "frase": "Basta pensar en", "tipo": "ejemplo" },
+    { "frase": "Siempre que", "tipo": "condición" },
+    { "frase": "Por lo tanto", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Concretamente", "tipo": "ejemplo" },
+    { "frase": "A menos que", "tipo": "condición" },
+    { "frase": "En consecuencia", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "En particular", "tipo": "ejemplo" },
+    { "frase": "Con tal de que", "tipo": "condición" },
+    { "frase": "Por consiguiente", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Sobre todo", "tipo": "ejemplo" },
+    { "frase": "Salvo que", "tipo": "condición" },
+    { "frase": "Así pues", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Especialmente", "tipo": "ejemplo" },
+    { "frase": "Suponiendo que", "tipo": "condición" },
+    { "frase": "De ahí que", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Un caso claro es", "tipo": "ejemplo" },
+    { "frase": "De lo contrario", "tipo": "condición" },
+    { "frase": "De modo que", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Véase", "tipo": "ejemplo" },
+    { "frase": "De hecho", "tipo": "énfasis" },
+    { "frase": "Como resultado", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Aunque", "tipo": "concesión" },
+    { "frase": "En realidad", "tipo": "énfasis" },
+    { "frase": "Esto lleva a", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Si bien", "tipo": "concesión" },
+    { "frase": "Sin duda", "tipo": "énfasis" },
+    { "frase": "Por eso mismo", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "A pesar de", "tipo": "concesión" },
+    { "frase": "Cabe destacar que", "tipo": "énfasis" },
+    { "frase": "Lo que implica que", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Es cierto que", "tipo": "concesión" },
+    { "frase": "Lo importante es que", "tipo": "énfasis" },
+    { "frase": "Entonces", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Admito que", "tipo": "concesión" },
+    { "frase": "Hay que subrayar que", "tipo": "énfasis" },
+    { "frase": "A raíz de esto", "tipo": "consecuencia" }
+  ],
+  [
+    { "frase": "Reconozco que", "tipo": "concesión" },
+    { "frase": "Ni mucho menos", "tipo": "énfasis" },
+    { "frase": "Porque", "tipo": "causa" }
+  ],
+  [
+    { "frase": "Por más que", "tipo": "concesión" },
+    { "frase": "Bajo ningún concepto", "tipo": "énfasis" },
+    { "frase": "Ya que", "tipo": "causa" }
+  ],
+  [
+    { "frase": "Aun cuando", "tipo": "concesión" },
+    { "frase": "Vale la pena recordar", "tipo": "énfasis" },
+    { "frase": "Puesto que", "tipo": "causa" }
+  ],
+  [
+    { "frase": "De acuerdo, pero", "tipo": "concesión" },
+    { "frase": "Nada menos que", "tipo": "énfasis" },
+    { "frase": "Debido a", "tipo": "causa" }
+  ],
+  [
+    { "frase": "Puede ser, aunque", "tipo": "concesión" },
+    { "frase": "Precisamente", "tipo": "énfasis" },
+    { "frase": "Dado que", "tipo": "causa" }
+  ],
+  [
+    { "frase": "Hasta cierto punto", "tipo": "concesión" },
+    { "frase": "Justamente", "tipo": "énfasis" },
+    { "frase": "A causa de", "tipo": "causa" }
+  ],
+  [
+    { "frase": "En parte tienes razón", "tipo": "concesión" },
+    { "frase": "Hoy en día", "tipo": "tiempo" },
+    { "frase": "Gracias a", "tipo": "causa" }
+  ],
+  [
+    { "frase": "En resumen", "tipo": "conclusión" },
+    { "frase": "Hasta ahora", "tipo": "tiempo" },
+    { "frase": "Por culpa de", "tipo": "causa" }
+  ],
+  [
+    { "frase": "En conclusión", "tipo": "conclusión" },
+    { "frase": "A largo plazo", "tipo": "tiempo" },
+    { "frase": "El motivo es que", "tipo": "causa" }
+  ],
+  [
+    { "frase": "Para terminar", "tipo": "conclusión" },
+    { "frase": "A corto plazo", "tipo": "tiempo" },
+    { "frase": "Esto se explica por", "tipo": "causa" }
+  ],
+  [
+    { "frase": "En definitiva", "tipo": "conclusión" },
+    { "frase": "Cada vez más", "tipo": "tiempo" },
+    { "frase": "Visto que", "tipo": "causa" }
+  ],
+  [
+    { "frase": "Total, que", "tipo": "conclusión" },
+    { "frase": "Desde hace años", "tipo": "tiempo" },
+    { "frase": "Como", "tipo": "causa" }
+  ],
+  [
+    { "frase": "Resumiendo", "tipo": "conclusión" },
+    { "frase": "En el futuro", "tipo": "tiempo" },
+    { "frase": "En primer lugar", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "A fin de cuentas", "tipo": "conclusión" },
+    { "frase": "Tarde o temprano", "tipo": "tiempo" },
+    { "frase": "En segundo lugar", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "En pocas palabras", "tipo": "conclusión" },
+    { "frase": "Con respecto a", "tipo": "referencia" },
+    { "frase": "A continuación", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "Todo apunta a que", "tipo": "conclusión" },
+    { "frase": "En cuanto a", "tipo": "referencia" },
+    { "frase": "Luego", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "Por todo ello", "tipo": "conclusión" },
+    { "frase": "Por lo que se refiere a", "tipo": "referencia" },
+    { "frase": "Después", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "Lo esencial es", "tipo": "conclusión" },
+    { "frase": "Hablando de", "tipo": "referencia" },
+    { "frase": "Antes de nada", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "Concluyo que", "tipo": "conclusión" },
+    { "frase": "Según los datos", "tipo": "referencia" },
+    { "frase": "Para empezar", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "A mi juicio", "tipo": "opinión" },
+    { "frase": "Como dice el refrán", "tipo": "referencia" },
+    { "frase": "Finalmente", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "Desde mi punto de vista", "tipo": "opinión" },
+    { "frase": "Volviendo al tema", "tipo": "referencia" },
+    { "frase": "Por último", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "Estoy convencido de que", "tipo": "opinión" },
+    { "frase": "A propósito de", "tipo": "referencia" },
+    { "frase": "Al final", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "Me parece que", "tipo": "opinión" },
+    { "frase": "¿No te parece que", "tipo": "interpelación" },
+    { "frase": "Mientras tanto", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "Creo firmemente que", "tipo": "opinión" },
+    { "frase": "Piénsalo así", "tipo": "interpelación" },
+    { "frase": "Acto seguido", "tipo": "secuencia" }
+  ],
+  [
+    { "frase": "En mi opinión", "tipo": "opinión" },
+    { "frase": "Imagina que", "tipo": "interpelación" },
+    { "frase": "Además", "tipo": "adición" }
+  ],
+  [
+    { "frase": "Sostengo que", "tipo": "opinión" },
+    { "frase": "Dime una cosa", "tipo": "interpelación" },
+    { "frase": "Asimismo", "tipo": "adición" }
+  ],
+  [
+    { "frase": "Defiendo que", "tipo": "opinión" },
+    { "frase": "Te lo pregunto al revés", "tipo": "interpelación" },
+    { "frase": "También", "tipo": "adición" }
+  ],
+  [
+    { "frase": "No me cabe duda de que", "tipo": "opinión" },
+    { "frase": "Ponte en su lugar", "tipo": "interpelación" },
+    { "frase": "Igualmente", "tipo": "adición" }
+  ],
+  [
+    { "frase": "Personalmente", "tipo": "opinión" },
+    { "frase": "Seamos honestos", "tipo": "interpelación" },
+    { "frase": "Es más", "tipo": "adición" }
+  ],
+  [
+    { "frase": "A mi modo de ver", "tipo": "opinión" },
+    { "frase": "Coincidirás conmigo en que", "tipo": "interpelación" },
+    { "frase": "Incluso", "tipo": "adición" }
+  ],
+  [
+    { "frase": "Diría que", "tipo": "opinión" },
+    { "frase": "Sin embargo", "tipo": "contraste" },
+    { "frase": "Aparte de eso", "tipo": "adición" }
+  ],
+  [
+    { "frase": "O sea", "tipo": "reformulación" },
+    { "frase": "No obstante", "tipo": "contraste" },
+    { "frase": "Junto a esto", "tipo": "adición" }
+  ],
+  [
+    { "frase": "Es decir", "tipo": "reformulación" },
+    { "frase": "En cambio", "tipo": "contraste" },
+    { "frase": "No solo eso, sino que", "tipo": "adición" }
+  ],
+  [
+    { "frase": "Dicho de otro modo", "tipo": "reformulación" },
+    { "frase": "Por el contrario", "tipo": "contraste" },
+    { "frase": "Del mismo modo", "tipo": "adición" }
+  ],
+  [
+    { "frase": "En otras palabras", "tipo": "reformulación" },
+    { "frase": "Aun así", "tipo": "contraste" },
+    { "frase": "A esto se añade", "tipo": "adición" }
+  ],
+  [
+    { "frase": "Mejor dicho", "tipo": "reformulación" },
+    { "frase": "Ahora bien", "tipo": "contraste" },
+    { "frase": "Por añadidura", "tipo": "adición" }
+  ],
+  [
+    { "frase": "Quiero decir", "tipo": "reformulación" },
+    { "frase": "Pese a ello", "tipo": "contraste" },
+    { "frase": "Por ejemplo", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "Para ser claro", "tipo": "reformulación" },
+    { "frase": "Mientras que", "tipo": "contraste" },
+    { "frase": "Como muestra", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "Lo que quiero decir es", "tipo": "reformulación" },
+    { "frase": "Por un lado", "tipo": "contraste" },
+    { "frase": "Es el caso de", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "Si", "tipo": "condición" },
+    { "frase": "Por otro lado", "tipo": "contraste" },
+    { "frase": "Tal como", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "En caso de que", "tipo": "condición" },
+    { "frase": "En lugar de", "tipo": "contraste" },
+    { "frase": "Pongamos por caso", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "Siempre que", "tipo": "condición" },
+    { "frase": "Al contrario de lo que parece", "tipo": "contraste" },
+    { "frase": "Basta pensar en", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "A menos que", "tipo": "condición" },
+    { "frase": "Por lo tanto", "tipo": "consecuencia" },
+    { "frase": "Concretamente", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "Con tal de que", "tipo": "condición" },
+    { "frase": "En consecuencia", "tipo": "consecuencia" },
+    { "frase": "En particular", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "Salvo que", "tipo": "condición" },
+    { "frase": "Por consiguiente", "tipo": "consecuencia" },
+    { "frase": "Sobre todo", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "Suponiendo que", "tipo": "condición" },
+    { "frase": "Así pues", "tipo": "consecuencia" },
+    { "frase": "Especialmente", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "De lo contrario", "tipo": "condición" },
+    { "frase": "De ahí que", "tipo": "consecuencia" },
+    { "frase": "Un caso claro es", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "De hecho", "tipo": "énfasis" },
+    { "frase": "De modo que", "tipo": "consecuencia" },
+    { "frase": "Véase", "tipo": "ejemplo" }
+  ],
+  [
+    { "frase": "En realidad", "tipo": "énfasis" },
+    { "frase": "Como resultado", "tipo": "consecuencia" },
+    { "frase": "Aunque", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Sin duda", "tipo": "énfasis" },
+    { "frase": "Esto lleva a", "tipo": "consecuencia" },
+    { "frase": "Si bien", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Cabe destacar que", "tipo": "énfasis" },
+    { "frase": "Por eso mismo", "tipo": "consecuencia" },
+    { "frase": "A pesar de", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Lo importante es que", "tipo": "énfasis" },
+    { "frase": "Lo que implica que", "tipo": "consecuencia" },
+    { "frase": "Es cierto que", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Hay que subrayar que", "tipo": "énfasis" },
+    { "frase": "Entonces", "tipo": "consecuencia" },
+    { "frase": "Admito que", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Ni mucho menos", "tipo": "énfasis" },
+    { "frase": "A raíz de esto", "tipo": "consecuencia" },
+    { "frase": "Reconozco que", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Bajo ningún concepto", "tipo": "énfasis" },
+    { "frase": "Porque", "tipo": "causa" },
+    { "frase": "Por más que", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Vale la pena recordar", "tipo": "énfasis" },
+    { "frase": "Ya que", "tipo": "causa" },
+    { "frase": "Aun cuando", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Nada menos que", "tipo": "énfasis" },
+    { "frase": "Puesto que", "tipo": "causa" },
+    { "frase": "De acuerdo, pero", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Precisamente", "tipo": "énfasis" },
+    { "frase": "Debido a", "tipo": "causa" },
+    { "frase": "Puede ser, aunque", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Justamente", "tipo": "énfasis" },
+    { "frase": "Dado que", "tipo": "causa" },
+    { "frase": "Hasta cierto punto", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Hoy en día", "tipo": "tiempo" },
+    { "frase": "A causa de", "tipo": "causa" },
+    { "frase": "En parte tienes razón", "tipo": "concesión" }
+  ],
+  [
+    { "frase": "Hasta ahora", "tipo": "tiempo" },
+    { "frase": "Gracias a", "tipo": "causa" },
+    { "frase": "En resumen", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "A largo plazo", "tipo": "tiempo" },
+    { "frase": "Por culpa de", "tipo": "causa" },
+    { "frase": "En conclusión", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "A corto plazo", "tipo": "tiempo" },
+    { "frase": "El motivo es que", "tipo": "causa" },
+    { "frase": "Para terminar", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "Cada vez más", "tipo": "tiempo" },
+    { "frase": "Esto se explica por", "tipo": "causa" },
+    { "frase": "En definitiva", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "Desde hace años", "tipo": "tiempo" },
+    { "frase": "Visto que", "tipo": "causa" },
+    { "frase": "Total, que", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "En el futuro", "tipo": "tiempo" },
+    { "frase": "Como", "tipo": "causa" },
+    { "frase": "Resumiendo", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "Tarde o temprano", "tipo": "tiempo" },
+    { "frase": "En primer lugar", "tipo": "secuencia" },
+    { "frase": "A fin de cuentas", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "Con respecto a", "tipo": "referencia" },
+    { "frase": "En segundo lugar", "tipo": "secuencia" },
+    { "frase": "En pocas palabras", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "En cuanto a", "tipo": "referencia" },
+    { "frase": "A continuación", "tipo": "secuencia" },
+    { "frase": "Todo apunta a que", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "Por lo que se refiere a", "tipo": "referencia" },
+    { "frase": "Luego", "tipo": "secuencia" },
+    { "frase": "Por todo ello", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "Hablando de", "tipo": "referencia" },
+    { "frase": "Después", "tipo": "secuencia" },
+    { "frase": "Lo esencial es", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "Según los datos", "tipo": "referencia" },
+    { "frase": "Antes de nada", "tipo": "secuencia" },
+    { "frase": "Concluyo que", "tipo": "conclusión" }
+  ],
+  [
+    { "frase": "Como dice el refrán", "tipo": "referencia" },
+    { "frase": "Para empezar", "tipo": "secuencia" },
+    { "frase": "A mi juicio", "tipo": "opinión" }
+  ]
+]
