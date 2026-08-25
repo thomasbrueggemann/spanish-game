@@ -1,7 +1,7 @@
 // Todo el trato con el DOM vive aquí. `pintar()` recibe una instantánea del
 // estado y deja la pantalla igual a ella; nunca decide reglas del juego.
 
-import {ACCIONES, NIVELES, posicionDe, relojTexto} from './game.js'
+import {ACCIONES, NIVELES, posicionDe, relojEtiqueta, relojTexto} from './game.js'
 
 const $ = id => document.getElementById(id)
 
@@ -28,7 +28,7 @@ const el = {
 
   reloj: $('reloj'), btnReloj: $('btnReloj'),
   puntosTurno: $('puntosTurno'), btnAccion: $('btnAccion'),
-  espera: $('espera'), esperaTexto: $('esperaTexto'),
+  papel: $('papel'), papelTexto: $('papelTexto'),
 
   ovLobby: $('ovLobby'), btnCrear: $('btnCrear'), btnUnirse: $('btnUnirse'), btnLocal: $('btnLocal'),
   formUnirse: $('formUnirse'), codigoSala: $('codigoSala'), errorSala: $('errorSala'),
@@ -165,7 +165,9 @@ let ultimoBono = null
  */
 export const pintar = ({s, yo, modo, barajas, codigo, companero}) => {
   const local = modo === 'local'
-  const puedoActuar = local || s.turno === yo
+  // Quien habla lleva el hilo del turno; el rival hace de juez y puntúa.
+  const hablo = local || s.turno === yo
+  const juzgo = local || s.turno !== yo
   const enJuego = s.fase !== 'nivel'
   const pos = posicionDe(s.cara)
 
@@ -209,8 +211,8 @@ export const pintar = ({s, yo, modo, barajas, codigo, companero}) => {
     texto(el.temaNumero, `N.º ${s.tema + 1}`)
     texto(el.temaTitulo, barajas.temas[s.tema].tema)
     texto(el.nArg, String(s.nArg))
-    ver(el.btnMasArg, puedoActuar)
-    ver(el.btnMenosArg, puedoActuar)
+    ver(el.btnMasArg, juzgo)
+    ver(el.btnMenosArg, juzgo)
   }
   ultimoTema = s.tema
 
@@ -222,7 +224,7 @@ export const pintar = ({s, yo, modo, barajas, codigo, companero}) => {
       reanimar(el.cartaBono)
       texto(el.bonoNumero, `N.º ${s.bono + 1}`)
     }
-    pintarConectores(barajas.bonos[s.bono], s.mBonos, puedoActuar, s.bono !== ultimoBono)
+    pintarConectores(barajas.bonos[s.bono], s.mBonos, juzgo, s.bono !== ultimoBono)
   }
   ultimoBono = s.bono
 
@@ -230,21 +232,24 @@ export const pintar = ({s, yo, modo, barajas, codigo, companero}) => {
   const seg = s.seg ?? s.segs ?? 0
   texto(el.reloj, relojTexto(seg))
   el.reloj.classList.toggle('apremio', s.corriendo && seg <= 15)
-  ver(el.btnReloj, puedoActuar && s.fase === 'debate')
-  texto(el.btnReloj, s.corriendo ? 'Pausa' : 'Reloj')
+  // Con el tiempo agotado el botón no tiene nada que hacer.
+  ver(el.btnReloj, hablo && s.fase === 'debate' && seg > 0)
+  texto(el.btnReloj, relojEtiqueta(s))
 
   texto(el.puntosTurno, `+${s.nArg + s.mBonos.filter(Boolean).length}`)
-  ver(el.btnAccion, puedoActuar && enJuego)
+  ver(el.btnAccion, hablo && enJuego)
   texto(el.btnAccion, ACCIONES[s.fase] || ACCIONES.lanzar)
   el.btnAccion.disabled = s.girando
 
-  // Panel de quien observa
-  const observando = enJuego && !puedoActuar
-  ver(el.espera, observando || (!local && !companero))
-  if (!local && !companero) {
-    texto(el.esperaTexto, 'El otro jugador no está conectado. La partida queda en pausa.')
-  } else if (observando) {
-    texto(el.esperaTexto, `Turno de ${s.nombres[s.turno]}. Escucha, haz de juez y espera tu turno.`)
+  // Recordatorio del papel que te toca este turno
+  const sinRival = !local && !companero
+  ver(el.papel, sinRival || (!local && enJuego))
+  if (sinRival) {
+    texto(el.papelTexto, 'El otro jugador no está conectado. La partida queda en pausa.')
+  } else if (hablo) {
+    texto(el.papelTexto, `Es tu turno: lee la carta, arranca el reloj y habla. ${s.nombres[1 - s.turno]} marca tus puntos.`)
+  } else {
+    texto(el.papelTexto, `Turno de ${s.nombres[s.turno]}. Escucha y marca los puntos que consiga.`)
   }
 
   // Superposiciones

@@ -17,8 +17,9 @@ publicarse en GitHub Pages. Se puede jugar **en línea entre dos navegadores**
 2. **La carta de tema.** Se voltea junto a la de bono. Construye hasta tres
    puntos de argumentación propios: 1 punto cada uno.
 3. **La carta bono.** Tres conectores. Cada uno que uses con naturalidad, +1.
-4. **El turno.** Hablas mientras corre el reloj y vas marcando lo que logras. El
-   otro jugador escucha y hace de juez. Después se cambia el turno.
+4. **El turno.** Lees tu carta con calma, arrancas el reloj cuando estés listo y
+   hablas. **El otro jugador hace de juez**: escucha y marca los puntos que
+   consigas. Después se cambia el turno.
 
 La partida son 8 rondas (16 turnos). La dificultad —que elige el Jugador 1— fija
 el tiempo por turno: 6, 5 o 4 minutos.
@@ -38,10 +39,18 @@ eso funciona en GitHub Pages tal cual.
   el enlace de invitación, entra solo.
 - Los dos ven el mismo tablero: mismo tema, mismo bono, mismo marcador y mismo
   reloj.
-- **Sólo el jugador de turno ve botones.** Al que observa se le ocultan el
-  contador de argumentos, las casillas de conectores, el botón de reloj y el
-  botón de acción; en su lugar ve el panel «Turno de X. Escucha, haz de juez y
-  espera tu turno». Sigue viendo las cartas, el reloj y los puntos en juego.
+- **Cada turno reparte dos papeles, y los mandos van con ellos.** Nadie se
+  puntúa a sí mismo:
+  - *Quien habla* lleva el hilo del turno: lanza el peso, voltea las cartas,
+    arranca y pausa el reloj y termina el turno. No ve los mandos de puntuar.
+  - *El rival hace de juez*: es el único con el contador de argumentos y las
+    casillas de conectores. No ve el botón de acción ni el del reloj.
+
+  Los dos ven en todo momento las mismas cartas, el mismo reloj y el mismo
+  marcador; sólo cambia qué botones les salen, y un aviso les recuerda qué papel
+  les toca.
+- **El reloj no arranca solo.** Al voltear las cartas queda parado para que quien
+  habla lea su tema sin prisa; el botón pasa por *Empezar → Pausa → Seguir*.
 - Una sala admite exactamente dos jugadores; a un tercero se le rechaza.
 - Si alguien se desconecta, la partida se pausa y se retoma cuando vuelve.
 
@@ -49,9 +58,13 @@ eso funciona en GitHub Pages tal cual.
 
 El anfitrión ejecuta las reglas y es dueño del estado; reparte una instantánea
 tras cada cambio. El invitado nunca muta nada: manda *intenciones*
-(`{t: 'voltear'}`, `{t: 'bono', i: 2}`…) y pinta lo que recibe. El anfitrión
-comprueba de quién viene cada intención antes de aplicarla, así que ocultar los
-botones no es la única defensa: el turno se valida también en el estado.
+(`{t: 'voltear'}`, `{t: 'bono', i: 2}`…) y pinta lo que recibe.
+
+El anfitrión comprueba de quién viene cada intención antes de aplicarla, así que
+ocultar los botones no es la única defensa. Hay dos comprobaciones, una por
+papel (`js/main.js`): `esQuienHabla` para `lanzar`, `voltear`, `reloj` y
+`terminar`; `esElJuez` para `arg` y `bono`. En el modo local una sola persona
+cumple los dos papeles.
 
 Los mazos barajados viven sólo en el anfitrión; por la red viajan únicamente los
 índices de la carta actual, así que cada paquete son unos pocos cientos de bytes.
@@ -129,6 +142,8 @@ sobrescribe `data/bonos.json` y se pierden las ediciones a mano.**
 
 - Número de rondas y duraciones: `RONDAS` y `NIVELES`, al principio de
   [`js/game.js`](js/game.js).
+- Quién maneja cada mando: `esQuienHabla` / `esElJuez` en
+  [`js/main.js`](js/main.js) y `hablo` / `juzgo` en [`js/ui.js`](js/ui.js).
 - Foto de fondo: coloca `assets/fondo.jpg`. Si no está, se usa el degradado.
 
 ---

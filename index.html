@@ -36,7 +36,7 @@
     <div><h3>1 · El peso</h3><p>Lanza el peso: <b>cara</b> te toca defender el tema (<i>a favor</i>), <b>cruz</b> te toca rebatirlo (<i>en contra</i>).</p></div>
     <div><h3>2 · La carta de tema</h3><p>Voltea el tema y la carta bono a la vez. Construye <b>hasta tres puntos de argumentación propios</b>: cada uno vale <b>1 punto</b>.</p></div>
     <div><h3>3 · La carta bono</h3><p>Tres conectores. Si los usas de forma natural al hablar, ganas <b>1 punto por cada uno</b>.</p></div>
-    <div><h3>4 · El turno</h3><p>Habla mientras corre el reloj y marca lo que vayas logrando. El otro jugador escucha y hace de juez. Después se cambia el turno.</p></div>
+    <div><h3>4 · El turno</h3><p>Lee tu carta, arranca el reloj cuando estés listo y habla. El otro jugador escucha, <b>hace de juez</b> y marca las casillas. Después se cambia el turno.</p></div>
   </section>
 
   <div class="tablero">
@@ -106,7 +106,7 @@
           <article class="carta carta-bono" id="cartaBono">
             <span class="cinta cinta-bono" aria-hidden="true"></span>
             <div class="carta-cabecera"><span>Bono</span><span id="bonoNumero">N.º —</span></div>
-            <p class="carta-intro">Úsalos al hablar. +1 por cada uno.</p>
+            <p class="carta-intro">Cada uno que use al hablar, +1.</p>
             <div class="conectores" id="conectores"></div>
           </article>
         </div>
@@ -124,9 +124,9 @@
         </div>
       </div>
 
-      <div class="espera" id="espera" hidden>
-        <span class="espera-punto" aria-hidden="true"></span>
-        <span id="esperaTexto">Esperando…</span>
+      <div class="papel" id="papel" hidden>
+        <span class="punto-latido" aria-hidden="true"></span>
+        <span id="papelTexto"></span>
       </div>
 
       <div class="mesa-borde" aria-hidden="true">
@@ -187,7 +187,7 @@
         <div class="lobby-codigo" id="lobbyCodigo">——————</div>
         <button type="button" class="boton-claro" id="btnCopiar">Copiar enlace de invitación</button>
       </div>
-      <p class="lobby-estado" id="lobbyEstado"><span class="espera-punto" aria-hidden="true"></span> Esperando al segundo jugador…</p>
+      <p class="lobby-estado" id="lobbyEstado"><span class="punto-latido" aria-hidden="true"></span> Esperando al segundo jugador…</p>
       <button type="button" class="boton-fantasma boton-fantasma-oscuro" id="btnCancelar">Cancelar</button>
     </div>
   </div>

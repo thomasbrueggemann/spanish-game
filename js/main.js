@@ -46,7 +46,11 @@ const arrancarCronometro = () => {
 
 // ── Reglas: sólo el anfitrión / el modo local pasa por aquí ───────────
 
-const esSuTurno = jugador => modo === 'local' || estado.turno === jugador
+// Cada turno reparte dos papeles. Quien habla lleva el hilo de la partida
+// (peso, cartas, reloj, terminar); el rival hace de juez y es el único que
+// marca los puntos. En local una sola persona hace de las dos.
+const esQuienHabla = jugador => modo === 'local' || estado.turno === jugador
+const esElJuez = jugador => modo === 'local' || estado.turno !== jugador
 
 const aplicar = (a, jugador) => {
   if (!estado) return
@@ -68,7 +72,15 @@ const aplicar = (a, jugador) => {
     return cambiado()
   }
 
-  if (!esSuTurno(jugador)) return
+  // Puntuar es cosa del juez: nadie se pone nota a sí mismo.
+  if (a.t === 'arg' || a.t === 'bono') {
+    if (!esElJuez(jugador)) return
+    if (a.t === 'arg') J.ajustarArgumentos(estado, a.d)
+    else J.marcarBono(estado, a.i)
+    return cambiado()
+  }
+
+  if (!esQuienHabla(jugador)) return
 
   switch (a.t) {
     case 'lanzar':
@@ -81,8 +93,6 @@ const aplicar = (a, jugador) => {
       }, ESPERA_MS)
       return
     case 'voltear':   J.voltearCartas(estado, barajas); break
-    case 'arg':       J.ajustarArgumentos(estado, a.d); break
-    case 'bono':      J.marcarBono(estado, a.i); break
     case 'reloj':     J.alternarReloj(estado); break
     case 'terminar':  J.terminarTurno(estado); break
     default: return
@@ -96,19 +106,20 @@ const intentar = a => {
   else aplicar(a, yo)
 }
 
-const puedoActuar = () => vista && (modo === 'local' || vista.turno === yo)
+const hablo = () => !!vista && (modo === 'local' || vista.turno === yo)
+const juzgo = () => !!vista && (modo === 'local' || vista.turno !== yo)
 
 // ── Acciones de la interfaz ───────────────────────────────────────────
 
 const acciones = {
   avanzar() {
-    if (!puedoActuar()) return
+    if (!hablo()) return
     const paso = {lanzar: 'lanzar', tema: 'voltear', debate: 'terminar'}[vista.fase]
     if (paso) intentar({t: paso})
   },
-  alternarReloj() { if (puedoActuar()) intentar({t: 'reloj'}) },
-  argumentos(d)   { if (puedoActuar()) intentar({t: 'arg', d}) },
-  bono(i)         { if (puedoActuar()) intentar({t: 'bono', i}) },
+  alternarReloj() { if (hablo()) intentar({t: 'reloj'}) },
+  argumentos(d)   { if (juzgo()) intentar({t: 'arg', d}) },
+  bono(i)         { if (juzgo()) intentar({t: 'bono', i}) },
   nivel(i)        { if (modo !== 'invitado') intentar({t: 'nivel', i}) },
   nombre(i, valor) {
     if (modo !== 'local' && i !== yo) return

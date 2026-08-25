@@ -596,9 +596,9 @@ a:hover { color: #e3bd47; }
 .boton-accion:active { transform: translateY(1px); }
 .boton-accion:disabled { background: #c8a49d; cursor: progress; transform: none; }
 
-/* Panel de espera del jugador que observa */
+/* Recordatorio del papel de cada jugador en el turno */
 
-.espera {
+.papel {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -611,7 +611,7 @@ a:hover { color: #e3bd47; }
   color: var(--gris-suave);
 }
 
-.espera-punto {
+.punto-latido {
   width: 9px;
   height: 9px;
   flex: none;

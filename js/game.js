@@ -91,7 +91,9 @@ export const voltearCartas = (e, barajas) => {
   const [bono, mazoBonos] = robar(e.mazoBonos, barajas.bonos.length)
   return Object.assign(e, {
     tema, bono, mazoTemas, mazoBonos,
-    fase: 'debate', seg: e.segs, corriendo: true
+    // El reloj queda parado a propósito: quien habla lee su carta con calma
+    // y lo arranca cuando esté listo.
+    fase: 'debate', seg: e.segs, corriendo: false
   })
 }
 
@@ -105,8 +107,12 @@ export const marcarBono = (e, i) => {
   return Object.assign(e, {mBonos})
 }
 
-export const alternarReloj = e =>
-  e.fase !== 'debate' ? e : Object.assign(e, {corriendo: !e.corriendo, seg: e.seg ?? e.segs})
+export const alternarReloj = e => {
+  if (e.fase !== 'debate') return e
+  const seg = e.seg ?? e.segs
+  if (!e.corriendo && seg === 0) return e      // se acabó el tiempo: no se reanuda
+  return Object.assign(e, {corriendo: !e.corriendo, seg})
+}
 
 /** Un segundo de reloj. Devuelve `true` si algo ha cambiado. */
 export const tic = e => {
@@ -159,6 +165,11 @@ export const ACCIONES = {
   lanzar: 'Lanzar el peso',
   tema:   'Voltear las cartas',
   debate: 'Terminar turno'
+}
+
+export const relojEtiqueta = s => {
+  if (s.corriendo) return 'Pausa'
+  return s.seg == null || s.seg === s.segs ? 'Empezar' : 'Seguir'
 }
 
 export const posicionDe = cara => {
