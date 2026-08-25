@@ -1,0 +1,17 @@
+{
+  "name": "el-peso-del-debate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Juego de argumentación en español para dos jugadores. Sitio estático; estas dependencias son sólo para las pruebas.",
+  "scripts": {
+    "test": "node tests/run.mjs",
+    "test:rapidas": "node tests/run.mjs --rapidas",
+    "test:produccion": "node tests/run.mjs --produccion",
+    "start": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "jsdom": "^28.0.0",
+    "playwright": "^1.57.0"
+  }
+}

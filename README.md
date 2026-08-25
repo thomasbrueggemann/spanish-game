@@ -162,6 +162,35 @@ para no compartir estado).
 
 ---
 
+## Pruebas
+
+```bash
+npm install     # jsdom y Playwright, sólo para las pruebas
+npm test
+```
+
+Las dependencias son de desarrollo: el sitio que se publica no las usa ni las
+incluye. Las suites levantan su propio servidor en un puerto libre, así que no
+hay que arrancar nada a mano.
+
+```
+tests/reglas.test.mjs        las reglas puras de js/game.js, sin DOM
+tests/local.test.mjs         la partida en un aparato, sobre jsdom
+tests/partida.test.mjs       16 turnos seguidos hasta el marcador final
+tests/red.test.mjs           dos procesos = dos jugadores; comprueba el
+                             reparto de mandos y que el anfitrión rechaza
+                             lo que no toca (la red va simulada por IPC)
+tests/navegador.test.mjs     Chromium de verdad, dos pestañas, Trystero,
+                             Nostr y WebRTC reales; deja capturas en
+                             tests/capturas/
+tests/sala-llena.test.mjs    se rechaza al tercer jugador y a los códigos mal
+tests/produccion.test.mjs    lo mismo contra el sitio ya publicado
+```
+
+`npm run test:rapidas` salta las de navegador; `npm run test:produccion` añade
+la que va contra GitHub Pages. Si Playwright no está instalado, las de navegador
+se saltan solas en vez de fallar.
+
 ## Publicar en GitHub Pages
 
 **Opción A — desde una rama** (lo más simple): sube el repositorio y en
@@ -191,4 +220,5 @@ data/temas.json           150 cartas de tema
 data/bonos.json           150 cartas de bono
 data/conectores.json      banco de 160 conectores
 tools/generate-bonos.mjs  regenera bonos.json desde el banco
+tests/                    pruebas (ver arriba); no se publican
 ```

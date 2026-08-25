@@ -25,6 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      # Sólo se publica el juego; las pruebas y sus dependencias sobran.
+      - name: Quitar lo que no es el sitio
+        run: rm -rf tests package.json package-lock.json
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .

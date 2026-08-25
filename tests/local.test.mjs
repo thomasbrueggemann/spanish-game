@@ -1,0 +1,103 @@
+import {montar, $, visible, txt} from './harness.mjs'
+
+const fallos = []
+const ok = (cond, msg) => { if (!cond) fallos.push(msg); else console.log('  ✓', msg) }
+const espera = ms => new Promise(r => setTimeout(r, ms))
+
+const {window} = await montar()
+const clic = id => $(id).dispatchEvent(new window.Event('click', {bubbles: true}))
+
+await import('../js/main.js')
+await espera(80)
+
+console.log('\n— Vestíbulo —')
+ok(visible('ovLobby'), 'el vestíbulo se ve al arrancar')
+
+clic('btnLocal')
+await espera(20)
+ok(!visible('ovLobby'), 'jugar en local cierra el vestíbulo')
+ok(visible('ovNivel'), 'pide dificultad')
+ok($('niveles').children.length === 3, 'hay 3 niveles')
+
+console.log('\n— Dificultad —')
+$('niveles').children[1].dispatchEvent(new window.Event('click', {bubbles: true}))
+await espera(20)
+ok(!visible('ovNivel'), 'elegir dificultad cierra el panel')
+ok(txt('chipNivel').includes('Más difícil'), `chip de nivel: "${txt('chipNivel')}"`)
+ok(txt('reloj') === '5:00', `reloj a 5:00 (es ${txt('reloj')})`)
+ok(txt('btnAccion') === 'Lanzar el peso', 'el botón pide lanzar')
+
+console.log('\n— Lanzar el peso —')
+clic('btnAccion')
+ok($('peso').classList.contains('girando'), 'el peso gira')
+ok($('btnAccion').disabled, 'el botón se bloquea mientras gira')
+await espera(1300)
+ok(!$('peso').classList.contains('girando'), 'el peso se para')
+ok(['A FAVOR', 'EN CONTRA'].includes(txt('posicion')), `posición: ${txt('posicion')}`)
+ok(txt('btnAccion') === 'Voltear las cartas', 'el botón pide voltear')
+
+console.log('\n— Voltear cartas —')
+clic('btnAccion')
+await espera(20)
+ok(visible('envTema') && visible('envBono'), 'salen las dos cartas')
+ok(txt('temaTitulo').length > 10, `tema: "${txt('temaTitulo')}"`)
+ok($('conectores').children.length === 3, 'la carta bono trae 3 conectores')
+ok(txt('quedanTemas') === '149 cartas', `quedan ${txt('quedanTemas')}`)
+ok(txt('btnAccion') === 'Terminar turno', 'el botón pide terminar')
+ok(visible('btnReloj'), 'el botón de reloj aparece en debate')
+ok(txt('btnReloj') === 'Empezar', 'y ofrece EMPEZAR, no está ya corriendo')
+
+console.log('\n— Puntuar —')
+clic('btnMasArg'); clic('btnMasArg'); clic('btnMasArg'); clic('btnMasArg')
+await espera(20)
+ok(txt('nArg') === '3', `argumentos topan en 3 (es ${txt('nArg')})`)
+clic('btnMenosArg')
+await espera(20)
+ok(txt('nArg') === '2', 'el menos resta')
+$('conectores').children[0].dispatchEvent(new window.Event('click', {bubbles: true}))
+$('conectores').children[2].dispatchEvent(new window.Event('click', {bubbles: true}))
+await espera(20)
+ok($('conectores').children[0].classList.contains('marcado'), 'el conector 1 queda marcado')
+ok(!$('conectores').children[1].classList.contains('marcado'), 'el conector 2 sigue sin marcar')
+ok(txt('puntosTurno') === '+4', `puntos del turno: ${txt('puntosTurno')}`)
+
+console.log('\n— El reloj se arranca a mano —')
+const quieto = txt('reloj')
+await espera(2100)
+ok(txt('reloj') === quieto, `parado no baja solo (sigue en ${quieto})`)
+clic('btnReloj')
+await espera(20)
+ok(txt('btnReloj') === 'Pausa', 'al arrancarlo el botón pasa a Pausa')
+const antes = txt('reloj')
+await espera(2100)
+ok(txt('reloj') !== antes, `ahora sí baja (${antes} → ${txt('reloj')})`)
+clic('btnReloj')
+await espera(20)
+ok(txt('btnReloj') === 'Seguir', 'pausar ofrece seguir')
+const pausado = txt('reloj')
+await espera(1200)
+ok(txt('reloj') === pausado, 'en pausa el reloj no baja')
+
+console.log('\n— Cambio de turno —')
+clic('btnAccion')
+await espera(20)
+ok(txt('puntosA') === '4', `jugador 1 suma 4 (tiene ${txt('puntosA')})`)
+ok(visible('turnoB') && !visible('turnoA'), 'el turno pasa al jugador 2')
+ok($('jugadorB').classList.contains('activo'), 'la ficha del jugador 2 se resalta')
+ok(!visible('envTema'), 'las cartas se retiran')
+ok(txt('chipRonda') === '1', 'seguimos en la ronda 1')
+ok(txt('nArg') === '0' || !visible('envTema'), 'el contador se reinicia')
+
+console.log('\n— Nombres —')
+$('nombreA').value = 'Ana'
+$('nombreA').dispatchEvent(new window.Event('change', {bubbles: true}))
+await espera(20)
+ok(!$('nombreA').disabled && !$('nombreB').disabled, 'en local se editan los dos nombres')
+
+console.log('\n— Reglas —')
+clic('btnReglas'); ok(visible('reglas'), 'las reglas se abren')
+clic('btnReglas'); ok(!visible('reglas'), 'y se cierran')
+
+if (fallos.length) { console.log('\nFALLOS:'); fallos.forEach(f => console.log('  ✗', f)); process.exit(1) }
+console.log('\nTodo correcto.')
+process.exit(0)
